@@ -3,16 +3,21 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
-subtitle:
+title: s-oravec
+subtitle: no magic here.
 description:
-author: John Doe
-language:
-timezone:
+author: Štefan Oravec
+language: en
+timezone: Europe/Prague
+location: Prague
+author_title: ''
+avatar: css/images/avatar.png
+location: 'Prague, Czech Republic'
+follow: https://github.com/s-oravec/
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://yoursite.com
+url: http://http://s-oravec.github.io/
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -62,9 +67,10 @@ pagination_dir: page
 # Extensions
 ## Plugins: http://hexo.io/plugins/
 ## Themes: http://hexo.io/themes/
-theme: landscape
+theme: icarus
 
 # Deployment
 ## Docs: http://hexo.io/docs/deployment.html
 deploy:
   type:
+
