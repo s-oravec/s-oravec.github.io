@@ -72,5 +72,8 @@ theme: icarus
 # Deployment
 ## Docs: http://hexo.io/docs/deployment.html
 deploy:
-  type:
+  type: git
+  repo: https://github.com/s-oravec/s-oravec.github.io.git
+  branch: master
+
 
