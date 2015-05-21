@@ -1,8 +1,8 @@
 title: Oracle OpenSource pains
+date: 2015-05-14
 tags:
-- oracle
-- general
-- open source
+- Oracle
+- Open Source
 ---
 
 Last couple months spent developing JavaScript applications made me think about tools/applications that I would need for same comfort of development in PL/SQL. It always came down to one thing - packages = module = components.

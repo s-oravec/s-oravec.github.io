@@ -1,6 +1,7 @@
 title: Tradaa!!!
+date: 2015-05-11
 tags: 
-- general
+- General
 ---
 
 So I begin with OpenSource. 3...2...1...NOW!!! Actually I did couple months ago, but sometimes it takes a longer time to publish something, than to do it.
