@@ -134,7 +134,7 @@
           <div class="article-date">
   <i class="fa fa-calendar"></i>
   <a href="/2015/05/21/using-env-variables-in-sqlplus-and-sqlcl/">
-    <time datetime="2015-05-21T06:43:22.000Z" itemprop="datePublished">2015-05-21</time>
+    <time datetime="2015-05-21T08:20:44.000Z" itemprop="datePublished">2015-05-21</time>
   </a>
 </div>
           
@@ -154,7 +154,7 @@
 <figure class="highlight delphi"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">$ export foo=bar</span><br><span class="line">$ sql scott/tiger@some_remote_host:<span class="number">1521</span>:orcl</span><br><span class="line"></span><br><span class="line">SQLcl: Release <span class="number">4.1</span>.<span class="number">0</span> Release Candidate <span class="keyword">on</span> Thu May <span class="number">21</span> <span class="number">07</span>:<span class="number">59</span>:<span class="number">12</span> <span class="number">2015</span></span><br><span class="line">Copyright (c) <span class="number">1982</span>, <span class="number">2015</span>, Oracle.  All rights reserved.</span><br><span class="line">Connected <span class="keyword">to</span>:</span><br><span class="line">Oracle Database <span class="number">12</span>c Enterprise Edition Release <span class="number">12.1</span>.<span class="number">0.1</span>.<span class="number">0</span> - <span class="number">64</span>bit Production</span><br><span class="line"><span class="keyword">With</span> the Partitioning, OLAP, Advanced Analytics <span class="keyword">and</span> Real Application Testing options </span><br><span class="line"></span><br><span class="line">SQL&gt; <span class="keyword">var</span> x varchar2(<span class="number">255</span>);</span><br><span class="line">SQL&gt; exec dbms_system.get_env(<span class="string">'foo'</span>, :x);</span><br><span class="line"></span><br><span class="line">PL/SQL <span class="function"><span class="keyword">procedure</span> <span class="title">successfully</span> <span class="title">completed</span>.</span><br><span class="line"></span><br><span class="line"><span class="title">SQL</span>&gt; <span class="title">print</span> <span class="title">x</span></span><br><span class="line"></span><br><span class="line"><span class="title">X</span></span><br><span class="line">------</span><br><span class="line"></span><br><span class="line"><span class="title">SQL</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p><strong>What I’ve meant and didn’t clearly explain is client side functionality and that’s SQL*Plus/SQLcl for me.</strong></p>
 <p>What I need, and I think can be useful for many people, is something like this:</p>
-<figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$ </span>export foo=bar</span><br><span class="line"><span class="variable">$ </span>sql /nolog</span><br><span class="line"><span class="variable">$ </span>sqlplus /nolog</span><br><span class="line"><span class="constant">SQL&gt;</span> prompt &amp;&amp;<span class="constant">__foo</span></span><br><span class="line">bar</span><br><span class="line"><span class="constant">SQL&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$ </span>export foo=bar</span><br><span class="line"><span class="variable">$ </span>sql /nolog</span><br><span class="line"><span class="constant">SQL&gt;</span> prompt &amp;&amp;<span class="constant">__foo</span></span><br><span class="line">bar</span><br><span class="line"><span class="constant">SQL&gt;</span></span><br></pre></td></tr></table></figure>
 <p>I don’t know how it can be done in SQL*Plus/SQLcl. Well I do, but it’s</p>
 <ul>
 <li>ugly </li>
@@ -175,7 +175,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://http://s-oravec.github.io/2015/05/21/using-env-variables-in-sqlplus-and-sqlcl/" data-id="ci9xtoybz000397wv9xj8unsd" class="article-share-link">Share</a>
+      <a data-url="http://http://s-oravec.github.io/2015/05/21/using-env-variables-in-sqlplus-and-sqlcl/" data-id="ci9xwsgbq0003fdwvwaktp0fl" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Oracle/">Oracle</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SQL-Plus/">SQL*Plus</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SQLcl/">SQLcl</a></li></ul>
@@ -232,7 +232,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://http://s-oravec.github.io/2015/05/14/oracle-open-source-pains-01/" data-id="ci9xtoyce000a97wvd9hxs91q" class="article-share-link">Share</a>
+      <a data-url="http://http://s-oravec.github.io/2015/05/14/oracle-open-source-pains-01/" data-id="ci9xwsgbt000afdwvg01tfq3k" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Open-Source/">Open Source</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Oracle/">Oracle</a></li></ul>
@@ -284,7 +284,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://http://s-oravec.github.io/2015/05/11/hello-world/" data-id="ci9xtoybg000097wv5h39dpcb" class="article-share-link">Share</a>
+      <a data-url="http://http://s-oravec.github.io/2015/05/11/hello-world/" data-id="ci9xwsgb60000fdwvs1uidiy5" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/General/">General</a></li></ul>
@@ -312,7 +312,7 @@
             <div class="item-inner">
               <p class="item-category"></p>
               <p class="item-title"><a href="/2015/05/21/using-env-variables-in-sqlplus-and-sqlcl/" class="title">Using Environment Variables In SQL*Plus/SQLcl</a></p>
-              <p class="item-date"><time datetime="2015-05-21T06:43:22.000Z" itemprop="datePublished">2015-05-21</time></p>
+              <p class="item-date"><time datetime="2015-05-21T08:20:44.000Z" itemprop="datePublished">2015-05-21</time></p>
             </div>
           </li>
         
