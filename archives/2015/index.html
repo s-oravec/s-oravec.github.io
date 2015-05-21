@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Archives: 2015 | s-oravec</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description">
+<meta property="og:type" content="website">
+<meta property="og:title" content="s-oravec">
+<meta property="og:url" content="http://http://s-oravec.github.io/archives/2015/index.html">
+<meta property="og:site_name" content="s-oravec">
+<meta property="og:description">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="s-oravec">
+<meta name="twitter:description">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href='//fonts.useso.com/css?family=Open+Sans:400italic,400,600' rel='stylesheet' type='text/css'>
+  <link href="//fonts.useso.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css" type="text/css">
+  
+
+</head>
+<body>
+  <div id="container">
+    <header id="header">
+  <div id="header-main" class="header-inner">
+    <div class="outer">
+      <a href="/" id="logo"><i class="logo"></i><span class="site-title">s-oravec</span></a>
+      <nav id="main-nav">
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        <div class="profile" id="profile-nav">
+          <a id="profile-anchor" href="javascript:;"><img class="avatar" src="/css/images/avatar.png"><i class="fa fa-caret-down"></i></a>
+        </div>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit"> </button><input type="hidden" name="q" value="site:http://http://s-oravec.github.io"></form>
+      </div>
+    </div>
+  </div>
+  <div id="main-nav-mobile" class="header-sub header-inner">
+    <table class="menu outer">
+      <tr>
+      
+        <td><a class="main-nav-link" href="/">Home</a></td>
+      
+        <td><a class="main-nav-link" href="/archives">Archives</a></td>
+      
+      <td>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><input type="hidden" name="q" value="site:http://http://s-oravec.github.io"></form>
+      </td>
+      </tr>
+    </table>
+  </div>
+  
+  <div id="header-sub" class="header-sub header-inner">
+    <div class="outer">
+      
+    </div>
+  </div>
+  
+</header>
+    <div class="outer">
+      <aside id="profile">
+  <div class="inner profile-inner">
+  	<div class="base-info profile-block">
+		  <img id="avatar" src="/css/images/avatar.png">
+      <h2 id="name">Štefan Oravec</h2>
+      <h3 id="title"></h3>
+      <span id="location"><i class="fa fa-map-marker"></i>Prague, Czech Republic</span>
+      <a id="follow" href="https://github.com/s-oravec/">FOLLOW</a>
+  	</div>
+    <div class="article-info profile-block">
+      <div class="article-info-block">
+        3
+        <span>posts</span>
+      </div>
+      <div class="article-info-block">
+        5
+        <span>tags</span>
+      </div>
+    </div>
+    
+    <div class="contact-info profile-block">
+      <table class="contact-list">
+        <tr>
+        
+          <td><a href="http://github.com/s-oravec" target="_blank" title="github"><i class="fa fa-github"></i></a></td>
+        
+          <td><a href="/s_oravec" target="_blank" title="twitter"><i class="fa fa-twitter"></i></a></td>
+        
+          <td><a href="/atom.xml" target="_blank" title="rss"><i class="fa fa-rss"></i></a></td>
+        
+        </tr>
+      </table>
+    </div>
+    
+  </div>
+</aside>
+      <section id="main">
+  
+  
+    
+    
+      
+        <div class="archive-year-wrap">
+          <i class="fa fa-calendar"></i>
+          <a href="/archives/2015" class="archive-year">2015</a>
+        </div>
+    
+    <article id="post-oracle-open-source-pains-01" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/05/21/oracle-open-source-pains-01/">Oracle OpenSource pains</a>
+    </h1>
+  
+
+        <div class="article-meta">
+          <div class="article-date">
+  <i class="fa fa-calendar"></i>
+  <a href="/2015/05/21/oracle-open-source-pains-01/">
+    <time datetime="2015-05-21T06:50:32.000Z" itemprop="datePublished">2015-05-21</time>
+  </a>
+</div>
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Last couple months spent developing JavaScript applications made me think about tools/applications that I would need for same comfort of development in PL/SQL. It always came down to one thing - packages = module = components.</p>
+<p>The best name would be <strong>module</strong> as package has a different meaning in Oracle world.</p>
+<p>By module I mean</p>
+<ul>
+<li>bundle of<ul>
+<li>stored procedures</li>
+<li>DDL &amp; DML scripts</li>
+<li>install/uninstall/upgrade SQL*Plus scripts</li>
+</ul>
+</li>
+</ul>
+<p>There is no common, industry standard how to create modules of Oracle DB code (or am I missing something?). Oracle is developing the Cart thing, which is currently exposed through Oracle SQL Developer and sadly the only way to use (in SQL Developer) is to deploy it to Oracle Cloud.</p>
+<p>Also what we need is definition of the way how to package, distribute, install/uninstall modules into your code base and then into Oracle Database. How to define inter-module dependencies and all that stuff that is provided by e.g. <a href="http://www.npmjs.com" target="_blank" rel="external">npmjs</a> - which is great source of inspiration for me.</p>
+<p>I’m working on draft for such a spec, which is based on npmjs’ definition for <code>package.json</code>. You can find it <a href="https://github.com/s-oravec/oradb_module_specification" target="_blank" rel="external">here</a>. Any comments/PRs are greatly welcomed.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://http://s-oravec.github.io/2015/05/21/oracle-open-source-pains-01/" data-id="ci9xtm28z000a89wv6hh6664r" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Open-Source/">Open Source</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Oracle/">Oracle</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    
+    
+    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/05/21/hello-world/">Tradaa!!!</a>
+    </h1>
+  
+
+        <div class="article-meta">
+          <div class="article-date">
+  <i class="fa fa-calendar"></i>
+  <a href="/2015/05/21/hello-world/">
+    <time datetime="2015-05-21T06:43:37.000Z" itemprop="datePublished">2015-05-21</time>
+  </a>
+</div>
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>So I begin with OpenSource. 3…2…1…NOW!!! Actually I did couple months ago, but sometimes it takes a longer time to publish something, than to do it.</p>
+<p>I’ve developed a lot. I’ve deleted more code with backspace than some of my more senior colleagues have ever written.</p>
+<p>There’s only one catch. Almost all of it has been in PL/SQL or SQL*Plus. It’s ugly, but powerful. Even COBOL is more sexy than PL/SQL and programming in SQL*Plus can be even worse than <a href="http://en.wikipedia.org/wiki/Brainfuck" target="_blank" rel="external">this cutie</a>. But still it can be fun.</p>
+<p>There was huge reinventing of wheel on almost every project I came to. And I’ve got tired of that.</p>
+<p>I had a long pause in my PL/SQL programming quest and spent some time developing in JavaScript. And I found that hidden world of OpenSource software. And I was amazed and decided to share some of my knowledge.</p>
+<p>So here’s my contribution to my future self and to humanity - in PL/SQL and SQL*Plus.</p>
+<p>Enjoy. Comment. Fork. Post PRs. Any form of interaction is greatly welcomed.</p>
+<hr>
+<p>(most of my projects I maintain in <a href="https://github.com/principal-engineering" target="_blank" rel="external">Principal engineering</a> organization, company I work for)</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://http://s-oravec.github.io/2015/05/21/hello-world/" data-id="ci9xtm280000089wvkr4ez0mr" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/General/">General</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    
+    
+    <article id="post-using-env-variables-in-sqlplus-and-sqlcl" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/05/21/using-env-variables-in-sqlplus-and-sqlcl/">Using Environment Variables In SQL*Plus/SQLcl</a>
+    </h1>
+  
+
+        <div class="article-meta">
+          <div class="article-date">
+  <i class="fa fa-calendar"></i>
+  <a href="/2015/05/21/using-env-variables-in-sqlplus-and-sqlcl/">
+    <time datetime="2015-05-21T06:43:22.000Z" itemprop="datePublished">2015-05-21</time>
+  </a>
+</div>
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>In response to Blaine Carter</p>
+<blockquote><p>Have you tried dbms_system.get_env()?</p>
+<footer><strong>@OraBlaineOS</strong><cite><a href="https://twitter.com/orablaineos/status/601144702692237312" target="_blank" rel="external">twitter.com/orablaineos/status/601144702692237312</a></cite></footer></blockquote>
+<p>I didn’t before. Thanks for that! Now I did and still it doesn’t solve my problem as it </p>
+<ul>
+<li>needs connection to server</li>
+<li>has access only to server environment variables</li>
+</ul>
+<figure class="highlight delphi"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">$ export foo=bar</span><br><span class="line">$ sql scott/tiger@some_remote_host:<span class="number">1521</span>:orcl</span><br><span class="line"></span><br><span class="line">SQLcl: Release <span class="number">4.1</span>.<span class="number">0</span> Release Candidate <span class="keyword">on</span> Thu May <span class="number">21</span> <span class="number">07</span>:<span class="number">59</span>:<span class="number">12</span> <span class="number">2015</span></span><br><span class="line">Copyright (c) <span class="number">1982</span>, <span class="number">2015</span>, Oracle.  All rights reserved.</span><br><span class="line">Connected <span class="keyword">to</span>:</span><br><span class="line">Oracle Database <span class="number">12</span>c Enterprise Edition Release <span class="number">12.1</span>.<span class="number">0.1</span>.<span class="number">0</span> - <span class="number">64</span>bit Production</span><br><span class="line"><span class="keyword">With</span> the Partitioning, OLAP, Advanced Analytics <span class="keyword">and</span> Real Application Testing options </span><br><span class="line"></span><br><span class="line">SQL&gt; <span class="keyword">var</span> x varchar2(<span class="number">255</span>);</span><br><span class="line">SQL&gt; exec dbms_system.get_env(<span class="string">'foo'</span>, :x);</span><br><span class="line"></span><br><span class="line">PL/SQL <span class="function"><span class="keyword">procedure</span> <span class="title">successfully</span> <span class="title">completed</span>.</span><br><span class="line"></span><br><span class="line"><span class="title">SQL</span>&gt; <span class="title">print</span> <span class="title">x</span></span><br><span class="line"></span><br><span class="line"><span class="title">X</span></span><br><span class="line">------</span><br><span class="line"></span><br><span class="line"><span class="title">SQL</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>What I’ve meant and didn’t clearly explain is client side functionality and that’s SQL*Plus/SQLcl for me.</strong></p>
+<p>What I need, and I think can be useful for many people, is something like this:</p>
+<figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$ </span>export foo=bar</span><br><span class="line"><span class="variable">$ </span>sql /nolog</span><br><span class="line"><span class="variable">$ </span>sqlplus /nolog</span><br><span class="line"><span class="constant">SQL&gt;</span> prompt &amp;&amp;<span class="constant">__foo</span></span><br><span class="line">bar</span><br><span class="line"><span class="constant">SQL&gt;</span></span><br></pre></td></tr></table></figure>
+<p>I don’t know how it can be done in SQL*Plus/SQLcl. Well I do, but it’s</p>
+<ul>
+<li>ugly </li>
+<li>not applicable for many security reasons</li>
+<li>isn’t OS independent</li>
+<li>it may break some legacy SQL*Plus code</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">$ export foo=bar</span><br><span class="line">$ sql /nolog</span><br><span class="line"></span><br><span class="line">SQLcl: <span class="operator"><span class="keyword">Release</span> <span class="number">4.1</span>.0 <span class="keyword">Release</span> Candidate <span class="keyword">on</span> Thu May <span class="number">21</span> <span class="number">07</span>:<span class="number">24</span>:<span class="number">28</span> <span class="number">2015</span></span><br><span class="line">Copyright (c) <span class="number">1982</span>, <span class="number">2015</span>, Oracle.  <span class="keyword">All</span> rights reserved.</span><br><span class="line"></span><br><span class="line"><span class="keyword">SQL</span>&gt; host echo <span class="string">"define __foo = "</span>$foo<span class="string">""</span> &gt; .tmp</span><br><span class="line"><span class="keyword">SQL</span>&gt; @.tmp</span><br><span class="line"><span class="keyword">SQL</span>&gt; prompt &amp;&amp;__foo</span><br><span class="line">bar</span><br><span class="line"></span><br><span class="line"><span class="keyword">SQL</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>So the fallback is to use some scripting language like Python, Perl, … Which brings some issues</p>
+<ul>
+<li>security might not approve it</li>
+<li>developers need to learn some other language</li>
+<li>code get’s overcomplicated</li>
+<li>environment needed to run scripts is getting more complicated</li>
+</ul>
+<p>@krisrice: It would be great feature new of SQLcl.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://http://s-oravec.github.io/2015/05/21/using-env-variables-in-sqlplus-and-sqlcl/" data-id="ci9xtm28l000389wvpmrbehza" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Oracle/">Oracle</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SQL-Plus/">SQL*Plus</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SQLcl/">SQLcl</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+  
+</section>
+      
+        <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">recents</h3>
+    <div class="widget">
+      <ul id="recent-post" class="no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category"></p>
+              <p class="item-title"><a href="/2015/05/21/oracle-open-source-pains-01/" class="title">Oracle OpenSource pains</a></p>
+              <p class="item-date"><time datetime="2015-05-21T06:50:32.000Z" itemprop="datePublished">2015-05-21</time></p>
+            </div>
+          </li>
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category"></p>
+              <p class="item-title"><a href="/2015/05/21/hello-world/" class="title">Tradaa!!!</a></p>
+              <p class="item-date"><time datetime="2015-05-21T06:43:37.000Z" itemprop="datePublished">2015-05-21</time></p>
+            </div>
+          </li>
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category"></p>
+              <p class="item-title"><a href="/2015/05/21/using-env-variables-in-sqlplus-and-sqlcl/" class="title">Using Environment Variables In SQL*Plus/SQLcl</a></p>
+              <p class="item-date"><time datetime="2015-05-21T06:43:22.000Z" itemprop="datePublished">2015-05-21</time></p>
+            </div>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/General/">General</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Open-Source/">Open Source</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Oracle/">Oracle</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL-Plus/">SQL*Plus</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQLcl/">SQLcl</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">3</span></li></ul>
+    </div>
+  </div>
+
+  
+  <div id="toTop" class="fa fa-chevron-up"></div>
+</aside>
+      
+    </div>
+    <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2015 Štefan Oravec<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="http://github.com/ppoffice">PPOffice</a>
+    </div>
+  </div>
+</footer>
+    
+
+
+<script src="//ajax.useso.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+
+  </div>
+</body>
+</html>
