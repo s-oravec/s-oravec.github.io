@@ -12,7 +12,7 @@ timezone: Europe/Prague
 location: Prague
 author_title: ''
 avatar: css/images/avatar.png
-location: 'Prague, Czech Republic'
+# location: 'Prague, Czech Republic'
 follow: https://github.com/s-oravec/
 
 # URL
