@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Tag: Oracle | s-oravec</title>
+  <title>Tag: PL/SQL | s-oravec</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:type" content="website">
 <meta property="og:title" content="s-oravec">
-<meta property="og:url" content="http://http://s-oravec.github.io/tags/Oracle/index.html">
+<meta property="og:url" content="http://http://s-oravec.github.io/tags/PL-SQL/index.html">
 <meta property="og:site_name" content="s-oravec">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="s-oravec">
@@ -109,77 +109,6 @@
           <a href="/archives/2015" class="archive-year">2015</a>
         </div>
     
-    <article id="post-using-env-variables-in-sqlplus-and-sqlcl" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/10/21/using-env-variables-in-sqlplus-and-sqlcl/">Using Environment Variables In SQL*Plus/SQLcl</a>
-    </h1>
-  
-
-        <div class="article-meta">
-          <div class="article-date">
-  <i class="fa fa-calendar"></i>
-  <a href="/2015/10/21/using-env-variables-in-sqlplus-and-sqlcl/">
-    <time datetime="2015-10-21T20:19:41.000Z" itemprop="datePublished">2015-10-21</time>
-  </a>
-</div>
-          
-        </div>
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>In response to Blaine Carter</p>
-<blockquote><p>Have you tried dbms_system.get_env()?</p>
-<footer><strong>@OraBlaineOS</strong><cite><a href="https://twitter.com/orablaineos/status/601144702692237312" target="_blank" rel="external">twitter.com/orablaineos/status/601144702692237312</a></cite></footer></blockquote>
-<p>I didn’t before. Thanks for that! Now I did and still it doesn’t solve my problem as it </p>
-<ul>
-<li>needs connection to server</li>
-<li>has access only to server environment variables</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">$ export foo=bar</div><div class="line">$ sql scott/tiger@some_remote_host:1521:orcl</div><div class="line"></div><div class="line">SQL&gt; var x varchar2(255);</div><div class="line">SQL&gt; exec dbms_system.get_env(&apos;foo&apos;, :x);</div><div class="line"></div><div class="line">PL/SQL procedure successfully completed.</div><div class="line"></div><div class="line">SQL&gt; print x</div><div class="line"></div><div class="line">X</div><div class="line">------</div></pre></td></tr></table></figure>
-<p><strong>What I’ve meant and didn’t clearly explain is client side functionality and that’s SQL*Plus/SQLcl for me.</strong></p>
-<p>What I need, and I think can be useful for many people, is something like this:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$ export foo=bar</div><div class="line">$ sql /nolog</div><div class="line"></div><div class="line">SQL&gt; prompt &amp;&amp;__foo</div><div class="line">bar</div></pre></td></tr></table></figure>
-<p>I don’t know how it can be done in SQL*Plus/SQLcl. Well I do, but it’s</p>
-<ul>
-<li>ugly </li>
-<li>not applicable for many security reasons</li>
-<li>isn’t OS independent</li>
-<li>it may break some legacy SQL*Plus code</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$ export foo=bar</div><div class="line">$ sql /nolog</div><div class="line"></div><div class="line">SQL&gt; host echo &quot;define __foo = &quot;$foo&quot;&quot; &gt; .tmp</div><div class="line">SQL&gt; @.tmp</div><div class="line">SQL&gt; prompt &amp;&amp;__foo</div><div class="line">bar</div></pre></td></tr></table></figure>
-<p>So the fallback is to use some scripting language like Python, Perl, … Which brings some issues</p>
-<ul>
-<li>security might not approve it</li>
-<li>developers need to learn some other language</li>
-<li>code get’s overcomplicated</li>
-<li>environment needed to run scripts is getting more complicated</li>
-</ul>
-<p>@krisrice: It would be great feature new of SQLcl.</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://http://s-oravec.github.io/2015/10/21/using-env-variables-in-sqlplus-and-sqlcl/" data-id="ciuab5pj80008tbfhx64wenzg" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Oracle/">Oracle</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SQL-Plus/">SQL*Plus</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SQLcl/">SQLcl</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    
-    
     <article id="post-plsql-try-catch-finally" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -248,108 +177,6 @@
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Oracle/">Oracle</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PL-SQL/">PL/SQL</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    
-    
-    <article id="post-note-001-to-future-me" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/06/04/note-001-to-future-me/">SQL*Plus set substitution variable from select</a>
-    </h1>
-  
-
-        <div class="article-meta">
-          <div class="article-date">
-  <i class="fa fa-calendar"></i>
-  <a href="/2015/06/04/note-001-to-future-me/">
-    <time datetime="2015-06-03T22:00:00.000Z" itemprop="datePublished">2015-06-04</time>
-  </a>
-</div>
-          
-        </div>
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Don’t waste time googling “sqlplus set substitution variable from select”. It’s </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">COLUMN USER NEW_VALUE g_schema</div><div class="line">SELECT USER FROM dual;</div><div class="line">prompt &amp;&amp;g_schema</div></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://http://s-oravec.github.io/2015/06/04/note-001-to-future-me/" data-id="ciuab5pj30004tbfhmyn75x28" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Oracle/">Oracle</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SQL-Plus/">SQL*Plus</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    
-    
-    <article id="post-oracle-open-source-pains-01" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/05/14/oracle-open-source-pains-01/">Oracle OpenSource pains</a>
-    </h1>
-  
-
-        <div class="article-meta">
-          <div class="article-date">
-  <i class="fa fa-calendar"></i>
-  <a href="/2015/05/14/oracle-open-source-pains-01/">
-    <time datetime="2015-05-13T22:00:00.000Z" itemprop="datePublished">2015-05-14</time>
-  </a>
-</div>
-          
-        </div>
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Last couple months spent developing JavaScript applications made me think about tools/applications that I would need for same comfort of development in PL/SQL. It always came down to one thing - packages = module = components.</p>
-<p>The best name would be <strong>module</strong> as package has a different meaning in Oracle world.</p>
-<p>By module I mean</p>
-<ul>
-<li>bundle of<ul>
-<li>stored procedures</li>
-<li>DDL &amp; DML scripts</li>
-<li>install/uninstall/upgrade SQL*Plus scripts</li>
-</ul>
-</li>
-</ul>
-<p>There is no common, industry standard how to create modules of Oracle DB code (or am I missing something?). Oracle is developing the Cart thing, which is currently exposed through Oracle SQL Developer and sadly the only way to use (in SQL Developer) is to deploy it to Oracle Cloud.</p>
-<p>Also what we need is definition of the way how to package, distribute, install/uninstall modules into your code base and then into Oracle Database. How to define inter-module dependencies and all that stuff that is provided by e.g. <a href="http://www.npmjs.com" target="_blank" rel="external">npmjs</a> - which is great source of inspiration for me.</p>
-<p>I’m working on draft for such a spec, which is based on npmjs’ definition for <code>package.json</code>. You can find it <a href="https://github.com/s-oravec/oradb_module_specification" target="_blank" rel="external">here</a>. Any comments/PRs are greatly welcomed.</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://http://s-oravec.github.io/2015/05/14/oracle-open-source-pains-01/" data-id="ciuab5piw0001tbfhuvopovy9" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Open-Source/">Open Source</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Oracle/">Oracle</a></li></ul>
 
     </footer>
   </div>

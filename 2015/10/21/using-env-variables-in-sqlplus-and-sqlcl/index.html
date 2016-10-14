@@ -11,12 +11,13 @@ Have you tried dbms_system.get_env()?
 I didn’t before. Thanks for that! Now I did and still it doesn’t solve">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Using Environment Variables In SQL*Plus/SQLcl">
-<meta property="og:url" content="http://http://s-oravec.github.io/2015/05/21/using-env-variables-in-sqlplus-and-sqlcl/index.html">
+<meta property="og:url" content="http://http://s-oravec.github.io/2015/10/21/using-env-variables-in-sqlplus-and-sqlcl/index.html">
 <meta property="og:site_name" content="s-oravec">
 <meta property="og:description" content="In response to Blaine Carter
 Have you tried dbms_system.get_env()?
 @OraBlaineOStwitter.com/orablaineos/status/601144702692237312
 I didn’t before. Thanks for that! Now I did and still it doesn’t solve">
+<meta property="og:updated_time" content="2015-10-21T20:19:41.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Using Environment Variables In SQL*Plus/SQLcl">
 <meta name="twitter:description" content="In response to Blaine Carter
@@ -29,8 +30,8 @@ I didn’t before. Thanks for that! Now I did and still it doesn’t solve">
   
   <link href='//fonts.useso.com/css?family=Open+Sans:400italic,400,600' rel='stylesheet' type='text/css'>
   <link href="//fonts.useso.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" href="/css/style.css" type="text/css">
-  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
   
 
 </head>
@@ -53,7 +54,7 @@ I didn’t before. Thanks for that! Now I did and still it doesn’t solve">
         </div>
       </nav>
       <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit"> </button><input type="hidden" name="q" value="site:http://http://s-oravec.github.io"></form>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit"> </button><input type="hidden" name="sitesearch" value="http://http://s-oravec.github.io"></form>
       </div>
     </div>
   </div>
@@ -66,7 +67,7 @@ I didn’t before. Thanks for that! Now I did and still it doesn’t solve">
         <td><a class="main-nav-link" href="/archives">Archives</a></td>
       
       <td>
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><input type="hidden" name="q" value="site:http://http://s-oravec.github.io"></form>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><input type="hidden" name="sitesearch" value="http://http://s-oravec.github.io"></form>
       </td>
       </tr>
     </table>
@@ -80,16 +81,16 @@ I didn’t before. Thanks for that! Now I did and still it doesn’t solve">
 		  <img id="avatar" src="/css/images/avatar.png">
       <h2 id="name">Štefan Oravec</h2>
       <h3 id="title"></h3>
-      <span id="location"><i class="fa fa-map-marker"></i>Prague, Czech Republic</span>
+      <span id="location"><i class="fa fa-map-marker"></i>Prague</span>
       <a id="follow" href="https://github.com/s-oravec/">FOLLOW</a>
   	</div>
     <div class="article-info profile-block">
       <div class="article-info-block">
-        4
+        6
         <span>posts</span>
       </div>
       <div class="article-info-block">
-        5
+        8
         <span>tags</span>
       </div>
     </div>
@@ -125,8 +126,8 @@ I didn’t before. Thanks for that! Now I did and still it doesn’t solve">
         <div class="article-meta">
           <div class="article-date">
   <i class="fa fa-calendar"></i>
-  <a href="/2015/05/21/using-env-variables-in-sqlplus-and-sqlcl/">
-    <time datetime="2015-05-21T08:22:54.000Z" itemprop="datePublished">2015-05-21</time>
+  <a href="/2015/10/21/using-env-variables-in-sqlplus-and-sqlcl/">
+    <time datetime="2015-10-21T20:19:41.000Z" itemprop="datePublished">2015-10-21</time>
   </a>
 </div>
           
@@ -143,10 +144,10 @@ I didn’t before. Thanks for that! Now I did and still it doesn’t solve">
 <li>needs connection to server</li>
 <li>has access only to server environment variables</li>
 </ul>
-<figure class="highlight delphi"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">$ export foo=bar</span><br><span class="line">$ sql scott/tiger@some_remote_host:<span class="number">1521</span>:orcl</span><br><span class="line"></span><br><span class="line">SQL&gt; <span class="keyword">var</span> x varchar2(<span class="number">255</span>);</span><br><span class="line">SQL&gt; exec dbms_system.get_env(<span class="string">'foo'</span>, :x);</span><br><span class="line"></span><br><span class="line">PL/SQL <span class="function"><span class="keyword">procedure</span> <span class="title">successfully</span> <span class="title">completed</span>.</span><br><span class="line"></span><br><span class="line"><span class="title">SQL</span>&gt; <span class="title">print</span> <span class="title">x</span></span><br><span class="line"></span><br><span class="line"><span class="title">X</span></span><br><span class="line">------</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">$ export foo=bar</div><div class="line">$ sql scott/tiger@some_remote_host:1521:orcl</div><div class="line"></div><div class="line">SQL&gt; var x varchar2(255);</div><div class="line">SQL&gt; exec dbms_system.get_env(&apos;foo&apos;, :x);</div><div class="line"></div><div class="line">PL/SQL procedure successfully completed.</div><div class="line"></div><div class="line">SQL&gt; print x</div><div class="line"></div><div class="line">X</div><div class="line">------</div></pre></td></tr></table></figure>
 <p><strong>What I’ve meant and didn’t clearly explain is client side functionality and that’s SQL*Plus/SQLcl for me.</strong></p>
 <p>What I need, and I think can be useful for many people, is something like this:</p>
-<figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$ </span>export foo=bar</span><br><span class="line"><span class="variable">$ </span>sql /nolog</span><br><span class="line"></span><br><span class="line"><span class="constant">SQL&gt;</span> prompt &amp;&amp;<span class="constant">__foo</span></span><br><span class="line">bar</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$ export foo=bar</div><div class="line">$ sql /nolog</div><div class="line"></div><div class="line">SQL&gt; prompt &amp;&amp;__foo</div><div class="line">bar</div></pre></td></tr></table></figure>
 <p>I don’t know how it can be done in SQL*Plus/SQLcl. Well I do, but it’s</p>
 <ul>
 <li>ugly </li>
@@ -154,7 +155,7 @@ I didn’t before. Thanks for that! Now I did and still it doesn’t solve">
 <li>isn’t OS independent</li>
 <li>it may break some legacy SQL*Plus code</li>
 </ul>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ export foo=bar</span><br><span class="line">$ sql /nolog</span><br><span class="line"></span><br><span class="line">SQL&gt; host echo <span class="string">"define __foo = "</span><span class="variable">$foo</span><span class="string">""</span> &gt; <span class="class">.tmp</span></span><br><span class="line">SQL&gt; @<span class="class">.tmp</span></span><br><span class="line">SQL&gt; prompt &amp;&amp;__foo</span><br><span class="line">bar</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$ export foo=bar</div><div class="line">$ sql /nolog</div><div class="line"></div><div class="line">SQL&gt; host echo &quot;define __foo = &quot;$foo&quot;&quot; &gt; .tmp</div><div class="line">SQL&gt; @.tmp</div><div class="line">SQL&gt; prompt &amp;&amp;__foo</div><div class="line">bar</div></pre></td></tr></table></figure>
 <p>So the fallback is to use some scripting language like Python, Perl, … Which brings some issues</p>
 <ul>
 <li>security might not approve it</li>
@@ -167,7 +168,7 @@ I didn’t before. Thanks for that! Now I did and still it doesn’t solve">
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://http://s-oravec.github.io/2015/05/21/using-env-variables-in-sqlplus-and-sqlcl/" data-id="ciai1sx8s0003s8wvkts6587z" class="article-share-link">Share</a>
+      <a data-url="http://http://s-oravec.github.io/2015/10/21/using-env-variables-in-sqlplus-and-sqlcl/" data-id="ciuab5pj80008tbfhx64wenzg" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Oracle/">Oracle</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SQL-Plus/">SQL*Plus</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SQLcl/">SQLcl</a></li></ul>
@@ -178,19 +179,19 @@ I didn’t before. Thanks for that! Now I did and still it doesn’t solve">
     
 <nav id="article-nav">
   
-    <a href="/2015/06/04/note-001-to-future-me/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2016/10/14/scheduler-job-killed-for-unknown-reason/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          SQL*Plus set substitution variable from select
+          Scheduler Job killed for unknown reason
         
       </div>
     </a>
   
   
-    <a href="/2015/05/14/oracle-open-source-pains-01/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2015/06/04/plsql-try-catch-finally/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Oracle OpenSource pains</div>
+      <div class="article-nav-title">SQL*Plus set substitution variable from select</div>
     </a>
   
 </nav>
@@ -212,6 +213,33 @@ I didn’t before. Thanks for that! Now I did and still it doesn’t solve">
             
             <div class="item-inner">
               <p class="item-category"></p>
+              <p class="item-title"><a href="/2016/10/14/scheduler-job-killed-for-unknown-reason/" class="title">Scheduler Job killed for unknown reason</a></p>
+              <p class="item-date"><time datetime="2016-10-14T08:33:56.000Z" itemprop="datePublished">2016-10-14</time></p>
+            </div>
+          </li>
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category"></p>
+              <p class="item-title"><a href="/2015/10/21/using-env-variables-in-sqlplus-and-sqlcl/" class="title">Using Environment Variables In SQL*Plus/SQLcl</a></p>
+              <p class="item-date"><time datetime="2015-10-21T20:19:41.000Z" itemprop="datePublished">2015-10-21</time></p>
+            </div>
+          </li>
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category"></p>
+              <p class="item-title"><a href="/2015/06/04/plsql-try-catch-finally/" class="title">SQL*Plus set substitution variable from select</a></p>
+              <p class="item-date"><time datetime="2015-06-03T22:00:00.000Z" itemprop="datePublished">2015-06-04</time></p>
+            </div>
+          </li>
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category"></p>
               <p class="item-title"><a href="/2015/06/04/note-001-to-future-me/" class="title">SQL*Plus set substitution variable from select</a></p>
               <p class="item-date"><time datetime="2015-06-03T22:00:00.000Z" itemprop="datePublished">2015-06-04</time></p>
             </div>
@@ -221,26 +249,8 @@ I didn’t before. Thanks for that! Now I did and still it doesn’t solve">
             
             <div class="item-inner">
               <p class="item-category"></p>
-              <p class="item-title"><a href="/2015/05/21/using-env-variables-in-sqlplus-and-sqlcl/" class="title">Using Environment Variables In SQL*Plus/SQLcl</a></p>
-              <p class="item-date"><time datetime="2015-05-21T08:22:54.000Z" itemprop="datePublished">2015-05-21</time></p>
-            </div>
-          </li>
-        
-          <li>
-            
-            <div class="item-inner">
-              <p class="item-category"></p>
               <p class="item-title"><a href="/2015/05/14/oracle-open-source-pains-01/" class="title">Oracle OpenSource pains</a></p>
               <p class="item-date"><time datetime="2015-05-13T22:00:00.000Z" itemprop="datePublished">2015-05-14</time></p>
-            </div>
-          </li>
-        
-          <li>
-            
-            <div class="item-inner">
-              <p class="item-category"></p>
-              <p class="item-title"><a href="/2015/05/11/hello-world/" class="title">Tradaa!!!</a></p>
-              <p class="item-date"><time datetime="2015-05-10T22:00:00.000Z" itemprop="datePublished">2015-05-11</time></p>
             </div>
           </li>
         
@@ -255,7 +265,7 @@ I didn’t before. Thanks for that! Now I did and still it doesn’t solve">
   <div class="widget-wrap">
     <h3 class="widget-title">tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/General/">General</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Open-Source/">Open Source</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Oracle/">Oracle</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL-Plus/">SQL*Plus</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQLcl/">SQLcl</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/DBMS-SCHEDULER/">DBMS_SCHEDULER</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/General/">General</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Open-Source/">Open Source</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Oracle/">Oracle</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PGA/">PGA</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PL-SQL/">PL/SQL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL-Plus/">SQL*Plus</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQLcl/">SQLcl</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -266,7 +276,7 @@ I didn’t before. Thanks for that! Now I did and still it doesn’t solve">
   <div class="widget-wrap">
     <h3 class="widget-title">archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">June 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">3</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">October 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">June 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -279,7 +289,7 @@ I didn’t before. Thanks for that! Now I did and still it doesn’t solve">
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2015 Štefan Oravec<br>
+      &copy; 2016 Štefan Oravec<br>
       Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="http://github.com/ppoffice">PPOffice</a>
     </div>
   </div>
@@ -290,11 +300,11 @@ I didn’t before. Thanks for that! Now I did and still it doesn’t solve">
 <script src="//ajax.useso.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
-  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
 
 
-<script src="/js/script.js" type="text/javascript"></script>
+<script src="/js/script.js"></script>
 
   </div>
 </body>

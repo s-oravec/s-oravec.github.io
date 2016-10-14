@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Tag: SQL*Plus | s-oravec</title>
+  <title>Tag: DBMS_SCHEDULER | s-oravec</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:type" content="website">
 <meta property="og:title" content="s-oravec">
-<meta property="og:url" content="http://http://s-oravec.github.io/tags/SQL-Plus/index.html">
+<meta property="og:url" content="http://http://s-oravec.github.io/tags/DBMS-SCHEDULER/index.html">
 <meta property="og:site_name" content="s-oravec">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="s-oravec">
@@ -106,10 +106,10 @@
       
         <div class="archive-year-wrap">
           <i class="fa fa-calendar"></i>
-          <a href="/archives/2015" class="archive-year">2015</a>
+          <a href="/archives/2016" class="archive-year">2016</a>
         </div>
     
-    <article id="post-using-env-variables-in-sqlplus-and-sqlcl" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-scheduler-job-killed-for-unknown-reason" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
     
@@ -117,15 +117,15 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2015/10/21/using-env-variables-in-sqlplus-and-sqlcl/">Using Environment Variables In SQL*Plus/SQLcl</a>
+      <a class="article-title" href="/2016/10/14/scheduler-job-killed-for-unknown-reason/">Scheduler Job killed for unknown reason</a>
     </h1>
   
 
         <div class="article-meta">
           <div class="article-date">
   <i class="fa fa-calendar"></i>
-  <a href="/2015/10/21/using-env-variables-in-sqlplus-and-sqlcl/">
-    <time datetime="2015-10-21T20:19:41.000Z" itemprop="datePublished">2015-10-21</time>
+  <a href="/2016/10/14/scheduler-job-killed-for-unknown-reason/">
+    <time datetime="2016-10-14T08:33:56.000Z" itemprop="datePublished">2016-10-14</time>
   </a>
 </div>
           
@@ -134,87 +134,17 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>In response to Blaine Carter</p>
-<blockquote><p>Have you tried dbms_system.get_env()?</p>
-<footer><strong>@OraBlaineOS</strong><cite><a href="https://twitter.com/orablaineos/status/601144702692237312" target="_blank" rel="external">twitter.com/orablaineos/status/601144702692237312</a></cite></footer></blockquote>
-<p>I didn’t before. Thanks for that! Now I did and still it doesn’t solve my problem as it </p>
-<ul>
-<li>needs connection to server</li>
-<li>has access only to server environment variables</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">$ export foo=bar</div><div class="line">$ sql scott/tiger@some_remote_host:1521:orcl</div><div class="line"></div><div class="line">SQL&gt; var x varchar2(255);</div><div class="line">SQL&gt; exec dbms_system.get_env(&apos;foo&apos;, :x);</div><div class="line"></div><div class="line">PL/SQL procedure successfully completed.</div><div class="line"></div><div class="line">SQL&gt; print x</div><div class="line"></div><div class="line">X</div><div class="line">------</div></pre></td></tr></table></figure>
-<p><strong>What I’ve meant and didn’t clearly explain is client side functionality and that’s SQL*Plus/SQLcl for me.</strong></p>
-<p>What I need, and I think can be useful for many people, is something like this:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$ export foo=bar</div><div class="line">$ sql /nolog</div><div class="line"></div><div class="line">SQL&gt; prompt &amp;&amp;__foo</div><div class="line">bar</div></pre></td></tr></table></figure>
-<p>I don’t know how it can be done in SQL*Plus/SQLcl. Well I do, but it’s</p>
-<ul>
-<li>ugly </li>
-<li>not applicable for many security reasons</li>
-<li>isn’t OS independent</li>
-<li>it may break some legacy SQL*Plus code</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$ export foo=bar</div><div class="line">$ sql /nolog</div><div class="line"></div><div class="line">SQL&gt; host echo &quot;define __foo = &quot;$foo&quot;&quot; &gt; .tmp</div><div class="line">SQL&gt; @.tmp</div><div class="line">SQL&gt; prompt &amp;&amp;__foo</div><div class="line">bar</div></pre></td></tr></table></figure>
-<p>So the fallback is to use some scripting language like Python, Perl, … Which brings some issues</p>
-<ul>
-<li>security might not approve it</li>
-<li>developers need to learn some other language</li>
-<li>code get’s overcomplicated</li>
-<li>environment needed to run scripts is getting more complicated</li>
-</ul>
-<p>@krisrice: It would be great feature new of SQLcl.</p>
+        <p>Sometimes when <code>DBMS_SCHEDULER</code> job is <code>STOPPED</code> and the <code>USER_SCHEDULER_JOB_LOG.ADDITIONAL_INFO</code> says only that <code>&quot;Job slave process was terminated&quot;</code> you may find the real reason in <code>ERR$</code> table </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ORA-00028: your session has been killedORA-04036: PGA memory used by the instance exceeds PGA_AGGREGATE_LIMIT</div></pre></td></tr></table></figure>
+<p>if your session has been killed during execution of sme DML statement.</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://http://s-oravec.github.io/2015/10/21/using-env-variables-in-sqlplus-and-sqlcl/" data-id="ciuab5pj80008tbfhx64wenzg" class="article-share-link">Share</a>
+      <a data-url="http://http://s-oravec.github.io/2016/10/14/scheduler-job-killed-for-unknown-reason/" data-id="ciuab5pj60005tbfhimc9krmu" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Oracle/">Oracle</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SQL-Plus/">SQL*Plus</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SQLcl/">SQLcl</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    
-    
-    <article id="post-note-001-to-future-me" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/06/04/note-001-to-future-me/">SQL*Plus set substitution variable from select</a>
-    </h1>
-  
-
-        <div class="article-meta">
-          <div class="article-date">
-  <i class="fa fa-calendar"></i>
-  <a href="/2015/06/04/note-001-to-future-me/">
-    <time datetime="2015-06-03T22:00:00.000Z" itemprop="datePublished">2015-06-04</time>
-  </a>
-</div>
-          
-        </div>
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Don’t waste time googling “sqlplus set substitution variable from select”. It’s </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">COLUMN USER NEW_VALUE g_schema</div><div class="line">SELECT USER FROM dual;</div><div class="line">prompt &amp;&amp;g_schema</div></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://http://s-oravec.github.io/2015/06/04/note-001-to-future-me/" data-id="ciuab5pj30004tbfhmyn75x28" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Oracle/">Oracle</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SQL-Plus/">SQL*Plus</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DBMS-SCHEDULER/">DBMS_SCHEDULER</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PGA/">PGA</a></li></ul>
 
     </footer>
   </div>
