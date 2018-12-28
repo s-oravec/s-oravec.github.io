@@ -48,9 +48,9 @@ highlight:
   tab_replace:
 
 # Category & Tag
-default_category: uncategorized
-category_map:
-tag_map:
+# default_category: uncategorized
+# category_map: true
+tag_map: true
 
 # Date / Time format
 ## Hexo uses Moment.js to parse and display date
@@ -77,3 +77,13 @@ deploy:
   branch: master
 
 
+feed:
+  type: atom
+  path: atom.xml
+  limit: 20
+  hub:
+  content:
+  content_limit: 140
+  content_limit_delim: ' '
+  order_by: -date
+#   icon: icon.png

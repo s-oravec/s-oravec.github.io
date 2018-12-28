@@ -12,15 +12,15 @@ fancybox: true
 sidebar: right
 widgets:
 - recent_posts
-- category
-- tag
-- tagcloudq
+# - category
+# - tag
+- tagcloud
 - archive
 
 # Contacts
 contacts:
   github: http://github.com/s-oravec
-  twitter: 's_oravec'
+  twitter: http://twitter.com/s_oravec
   # facebook: '#'
   # dribbble: '#'
   rss: /atom.xml
