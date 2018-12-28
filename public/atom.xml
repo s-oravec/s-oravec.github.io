@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>s-oravec</title>
+  
+  <subtitle>no magic here.</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://http://s-oravec.github.io/"/>
+  <updated>2018-12-28T14:22:16.278Z</updated>
+  <id>http://http://s-oravec.github.io/</id>
+  
+  <author>
+    <name>Štefan Oravec</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>restart</title>
+    <link href="http://http://s-oravec.github.io/2018/12/28/restart/"/>
+    <id>http://http://s-oravec.github.io/2018/12/28/restart/</id>
+    <published>2018-12-27T23:00:00.000Z</published>
+    <updated>2018-12-28T14:22:16.278Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;Hardest part about blogging is to do it regularly. So let’s start, again
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>SQLcl appends junks bytes when spooling</title>
+    <link href="http://http://s-oravec.github.io/2016/10/18/sqlcl-appends-junks-bytes-when-spooling/"/>
+    <id>http://http://s-oravec.github.io/2016/10/18/sqlcl-appends-junks-bytes-when-spooling/</id>
+    <published>2016-10-18T13:02:24.000Z</published>
+    <updated>2016-10-18T13:11:09.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;SQLcl: Release 4.2.0.16.260.1205 Production appends some junk bytes when spooling under certain conditions.&lt;br&gt;Works fine with SQLcl:
+        
+      
+    
+    </summary>
+    
+    
+      <category term="SQL*Plus" scheme="http://http://s-oravec.github.io/tags/SQL-Plus/"/>
+    
+      <category term="SQLcl" scheme="http://http://s-oravec.github.io/tags/SQLcl/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Scheduler Job killed for unknown reason</title>
+    <link href="http://http://s-oravec.github.io/2016/10/14/scheduler-job-killed-for-unknown-reason/"/>
+    <id>http://http://s-oravec.github.io/2016/10/14/scheduler-job-killed-for-unknown-reason/</id>
+    <published>2016-10-14T08:33:56.000Z</published>
+    <updated>2016-10-14T09:34:09.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;Sometimes when &lt;code&gt;DBMS_SCHEDULER&lt;/code&gt; job is &lt;code&gt;STOPPED&lt;/code&gt; and the &lt;code&gt;USER_SCHEDULER_JOB_LOG.ADDITIONAL_INFO&lt;/code&gt; says
+        
+      
+    
+    </summary>
+    
+    
+      <category term="DBMS_SCHEDULER" scheme="http://http://s-oravec.github.io/tags/DBMS-SCHEDULER/"/>
+    
+      <category term="PGA" scheme="http://http://s-oravec.github.io/tags/PGA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Using Environment Variables In SQL*Plus/SQLcl</title>
+    <link href="http://http://s-oravec.github.io/2015/10/21/using-env-variables-in-sqlplus-and-sqlcl/"/>
+    <id>http://http://s-oravec.github.io/2015/10/21/using-env-variables-in-sqlplus-and-sqlcl/</id>
+    <published>2015-10-21T20:19:41.000Z</published>
+    <updated>2015-10-21T20:19:41.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;In response to Blaine Carter&lt;/p&gt;
+&lt;blockquote&gt;&lt;p&gt;Have you tried dbms_system.get_env()?&lt;/p&gt;
+&lt;footer&gt;&lt;strong&gt;@OraBlaineOS&lt;/strong&gt;&lt;cite&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Oracle" scheme="http://http://s-oravec.github.io/tags/Oracle/"/>
+    
+      <category term="SQL*Plus" scheme="http://http://s-oravec.github.io/tags/SQL-Plus/"/>
+    
+      <category term="SQLcl" scheme="http://http://s-oravec.github.io/tags/SQLcl/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>SQL*Plus set substitution variable from select</title>
+    <link href="http://http://s-oravec.github.io/2015/06/04/note-001-to-future-me/"/>
+    <id>http://http://s-oravec.github.io/2015/06/04/note-001-to-future-me/</id>
+    <published>2015-06-03T22:00:00.000Z</published>
+    <updated>2015-10-21T20:19:41.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;Don’t waste time googling “sqlplus set substitution variable from select”. It’s &lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Oracle" scheme="http://http://s-oravec.github.io/tags/Oracle/"/>
+    
+      <category term="SQL*Plus" scheme="http://http://s-oravec.github.io/tags/SQL-Plus/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>PL/SQL try-catch-finally</title>
+    <link href="http://http://s-oravec.github.io/2015/06/04/plsql-try-catch-finally/"/>
+    <id>http://http://s-oravec.github.io/2015/06/04/plsql-try-catch-finally/</id>
+    <published>2015-06-03T22:00:00.000Z</published>
+    <updated>2018-12-28T12:37:54.975Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;The best example to follow would be Java implementation of &lt;code&gt;try-catch-finally&lt;/code&gt;. However in PL/SQL it would get messy and the
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Oracle" scheme="http://http://s-oravec.github.io/tags/Oracle/"/>
+    
+      <category term="PL/SQL" scheme="http://http://s-oravec.github.io/tags/PL-SQL/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Oracle OpenSource pains</title>
+    <link href="http://http://s-oravec.github.io/2015/05/14/oracle-open-source-pains-01/"/>
+    <id>http://http://s-oravec.github.io/2015/05/14/oracle-open-source-pains-01/</id>
+    <published>2015-05-13T22:00:00.000Z</published>
+    <updated>2015-10-21T20:19:41.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;Last couple months spent developing JavaScript applications made me think about tools/applications that I would need for same comfort of
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Oracle" scheme="http://http://s-oravec.github.io/tags/Oracle/"/>
+    
+      <category term="Open Source" scheme="http://http://s-oravec.github.io/tags/Open-Source/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Tradaa!!!</title>
+    <link href="http://http://s-oravec.github.io/2015/05/11/hello-world/"/>
+    <id>http://http://s-oravec.github.io/2015/05/11/hello-world/</id>
+    <published>2015-05-10T22:00:00.000Z</published>
+    <updated>2015-10-21T20:19:41.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;So I begin with OpenSource. 3…2…1…NOW!!! Actually I did couple months ago, but sometimes it takes a longer time to publish something,
+        
+      
+    
+    </summary>
+    
+    
+      <category term="General" scheme="http://http://s-oravec.github.io/tags/General/"/>
+    
+  </entry>
+  
+</feed>
