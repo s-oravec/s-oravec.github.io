@@ -144,16 +144,16 @@
       
         <p>In response to Blaine Carter</p>
 <blockquote><p>Have you tried dbms_system.get_env()?</p>
-<footer><strong>@OraBlaineOS</strong><cite><a href="https://twitter.com/orablaineos/status/601144702692237312" target="_blank" rel="external">twitter.com/orablaineos/status/601144702692237312</a></cite></footer></blockquote>
+<footer><strong>@OraBlaineOS</strong><cite><a href="https://twitter.com/orablaineos/status/601144702692237312" target="_blank" rel="noopener">twitter.com/orablaineos/status/601144702692237312</a></cite></footer></blockquote>
 <p>I didn’t before. Thanks for that! Now I did and still it doesn’t solve my problem as it </p>
 <ul>
 <li>needs connection to server</li>
 <li>has access only to server environment variables</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">$ export foo=bar</div><div class="line">$ sql scott/tiger@some_remote_host:1521:orcl</div><div class="line"></div><div class="line">SQL&gt; var x varchar2(255);</div><div class="line">SQL&gt; exec dbms_system.get_env(&apos;foo&apos;, :x);</div><div class="line"></div><div class="line">PL/SQL procedure successfully completed.</div><div class="line"></div><div class="line">SQL&gt; print x</div><div class="line"></div><div class="line">X</div><div class="line">------</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">$ export foo=bar</span><br><span class="line">$ sql scott/tiger@some_remote_host:1521:orcl</span><br><span class="line"></span><br><span class="line">SQL&gt; var x varchar2(255);</span><br><span class="line">SQL&gt; exec dbms_system.get_env(&apos;foo&apos;, :x);</span><br><span class="line"></span><br><span class="line">PL/SQL procedure successfully completed.</span><br><span class="line"></span><br><span class="line">SQL&gt; print x</span><br><span class="line"></span><br><span class="line">X</span><br><span class="line">------</span><br></pre></td></tr></table></figure>
 <p><strong>What I’ve meant and didn’t clearly explain is client side functionality and that’s SQL*Plus/SQLcl for me.</strong></p>
 <p>What I need, and I think can be useful for many people, is something like this:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$ export foo=bar</div><div class="line">$ sql /nolog</div><div class="line"></div><div class="line">SQL&gt; prompt &amp;&amp;__foo</div><div class="line">bar</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ export foo=bar</span><br><span class="line">$ sql /nolog</span><br><span class="line"></span><br><span class="line">SQL&gt; prompt &amp;&amp;__foo</span><br><span class="line">bar</span><br></pre></td></tr></table></figure>
 <p>I don’t know how it can be done in SQL*Plus/SQLcl. Well I do, but it’s</p>
 <ul>
 <li>ugly </li>
@@ -161,7 +161,7 @@
 <li>isn’t OS independent</li>
 <li>it may break some legacy SQL*Plus code</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$ export foo=bar</div><div class="line">$ sql /nolog</div><div class="line"></div><div class="line">SQL&gt; host echo &quot;define __foo = &quot;$foo&quot;&quot; &gt; .tmp</div><div class="line">SQL&gt; @.tmp</div><div class="line">SQL&gt; prompt &amp;&amp;__foo</div><div class="line">bar</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ export foo=bar</span><br><span class="line">$ sql /nolog</span><br><span class="line"></span><br><span class="line">SQL&gt; host echo &quot;define __foo = &quot;$foo&quot;&quot; &gt; .tmp</span><br><span class="line">SQL&gt; @.tmp</span><br><span class="line">SQL&gt; prompt &amp;&amp;__foo</span><br><span class="line">bar</span><br></pre></td></tr></table></figure>
 <p>So the fallback is to use some scripting language like Python, Perl, … Which brings some issues</p>
 <ul>
 <li>security might not approve it</li>
@@ -174,7 +174,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://http://s-oravec.github.io/2015/10/21/using-env-variables-in-sqlplus-and-sqlcl/" data-id="cjq80mjly00086t5u9dyp2zwo" class="article-share-link">Share</a>
+      <a data-url="http://http://s-oravec.github.io/2015/10/21/using-env-variables-in-sqlplus-and-sqlcl/" data-id="cjq8145900008r25ueeu32uwa" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Oracle/">Oracle</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SQL-Plus/">SQL*Plus</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SQLcl/">SQLcl</a></li></ul>
