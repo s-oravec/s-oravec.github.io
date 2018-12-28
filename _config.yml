@@ -17,7 +17,7 @@ follow: https://github.com/s-oravec/
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://http://s-oravec.github.io/
+url: http://s-oravec.github.io/
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
