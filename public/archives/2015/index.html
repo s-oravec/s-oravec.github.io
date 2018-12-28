@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>Archives: 2015 | s-oravec</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="s-oravec">
+<meta property="og:url" content="http://http://s-oravec.github.io/archives/2015/index.html">
+<meta property="og:site_name" content="s-oravec">
+<meta property="og:locale" content="en">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="s-oravec">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <!-- <link href='//fonts.useso.com/css?family=Open+Sans:400italic,400,600' rel='stylesheet' type='text/css'> -->
+  <!-- <link href="//fonts.useso.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css"> -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Source+Code+Pro" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  
+
+</head></html>
+<body>
+  <div id="container">
+    <header id="header">
+  <div id="header-main" class="header-inner">
+    <div class="outer">
+      <a href="/" id="logo"><i class="logo"></i><span class="site-title">s-oravec</span></a>
+      <nav id="main-nav">
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        <div class="profile" id="profile-nav">
+          <a id="profile-anchor" href="javascript:;"><img class="avatar" src="/css/images/avatar.png"><i class="fa fa-caret-down"></i></a>
+        </div>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit"> </button><input type="hidden" name="sitesearch" value="http://http://s-oravec.github.io"></form>
+      </div>
+    </div>
+  </div>
+  <div id="main-nav-mobile" class="header-sub header-inner">
+    <table class="menu outer">
+      <tr>
+      
+        <td><a class="main-nav-link" href="/">Home</a></td>
+      
+        <td><a class="main-nav-link" href="/archives">Archives</a></td>
+      
+      <td>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><input type="hidden" name="sitesearch" value="http://http://s-oravec.github.io"></form>
+      </td>
+      </tr>
+    </table>
+  </div>
+  
+  <div id="header-sub" class="header-sub header-inner">
+    <div class="outer">
+      
+    </div>
+  </div>
+  
+</header>
+    <div class="outer">
+      <aside id="profile">
+  <div class="inner profile-inner">
+  	<div class="base-info profile-block">
+		  <img id="avatar" src="/css/images/avatar.png">
+      <h2 id="name">Štefan Oravec</h2>
+      <h3 id="title"></h3>
+      <span id="location"><i class="fa fa-map-marker"></i>Prague</span>
+      <a id="follow" href="https://github.com/s-oravec/">FOLLOW</a>
+  	</div>
+    <div class="article-info profile-block">
+      <div class="article-info-block">
+        7
+        <span>posts</span>
+      </div>
+      <div class="article-info-block">
+        10
+        <span>tags</span>
+      </div>
+    </div>
+    
+    <div class="contact-info profile-block">
+      <table class="contact-list">
+        <tr>
+        
+          <td><a href="http://github.com/s-oravec" target="_blank" title="github"><i class="fa fa-github"></i></a></td>
+        
+          <td><a href="/s_oravec" target="_blank" title="twitter"><i class="fa fa-twitter"></i></a></td>
+        
+          <td><a href="/atom.xml" target="_blank" title="rss"><i class="fa fa-rss"></i></a></td>
+        
+        </tr>
+      </table>
+    </div>
+    
+  </div>
+</aside>
+      <section id="main">
+  
+  
+    
+    
+      
+        <div class="archive-year-wrap">
+          <i class="fa fa-calendar"></i>
+          <a href="/archives/2015" class="archive-year">2015</a>
+        </div>
+    
+    <article id="post-using-env-variables-in-sqlplus-and-sqlcl" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/10/21/using-env-variables-in-sqlplus-and-sqlcl/">Using Environment Variables In SQL*Plus/SQLcl</a>
+    </h1>
+  
+
+        <div class="article-meta">
+          <div class="article-date">
+  <i class="fa fa-calendar"></i>
+  <a href="/2015/10/21/using-env-variables-in-sqlplus-and-sqlcl/">
+    <time datetime="2015-10-21T20:19:41.000Z" itemprop="datePublished">2015-10-21</time>
+  </a>
+</div>
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>In response to Blaine Carter</p>
+<blockquote><p>Have you tried dbms_system.get_env()?</p>
+<footer><strong>@OraBlaineOS</strong><cite><a href="https://twitter.com/orablaineos/status/601144702692237312" target="_blank" rel="noopener">twitter.com/orablaineos/status/601144702692237312</a></cite></footer></blockquote>
+<p>I didn’t before. Thanks for that! Now I did and still it doesn’t solve my problem as it </p>
+<ul>
+<li>needs connection to server</li>
+<li>has access only to server environment variables</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">$ export foo=bar</span><br><span class="line">$ sql scott/tiger@some_remote_host:1521:orcl</span><br><span class="line"></span><br><span class="line">SQL&gt; var x varchar2(255);</span><br><span class="line">SQL&gt; exec dbms_system.get_env(&apos;foo&apos;, :x);</span><br><span class="line"></span><br><span class="line">PL/SQL procedure successfully completed.</span><br><span class="line"></span><br><span class="line">SQL&gt; print x</span><br><span class="line"></span><br><span class="line">X</span><br><span class="line">------</span><br></pre></td></tr></table></figure>
+<p><strong>What I’ve meant and didn’t clearly explain is client side functionality and that’s SQL*Plus/SQLcl for me.</strong></p>
+<p>What I need, and I think can be useful for many people, is something like this:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ export foo=bar</span><br><span class="line">$ sql /nolog</span><br><span class="line"></span><br><span class="line">SQL&gt; prompt &amp;&amp;__foo</span><br><span class="line">bar</span><br></pre></td></tr></table></figure>
+<p>I don’t know how it can be done in SQL*Plus/SQLcl. Well I do, but it’s</p>
+<ul>
+<li>ugly </li>
+<li>not applicable for many security reasons</li>
+<li>isn’t OS independent</li>
+<li>it may break some legacy SQL*Plus code</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ export foo=bar</span><br><span class="line">$ sql /nolog</span><br><span class="line"></span><br><span class="line">SQL&gt; host echo &quot;define __foo = &quot;$foo&quot;&quot; &gt; .tmp</span><br><span class="line">SQL&gt; @.tmp</span><br><span class="line">SQL&gt; prompt &amp;&amp;__foo</span><br><span class="line">bar</span><br></pre></td></tr></table></figure>
+<p>So the fallback is to use some scripting language like Python, Perl, … Which brings some issues</p>
+<ul>
+<li>security might not approve it</li>
+<li>developers need to learn some other language</li>
+<li>code get’s overcomplicated</li>
+<li>environment needed to run scripts is getting more complicated</li>
+</ul>
+<p>@krisrice: It would be great feature new of SQLcl.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://http://s-oravec.github.io/2015/10/21/using-env-variables-in-sqlplus-and-sqlcl/" data-id="cjq82oshf000awv5uoifquaxj" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Oracle/">Oracle</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SQL-Plus/">SQL*Plus</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SQLcl/">SQLcl</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    
+    
+    <article id="post-plsql-try-catch-finally" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/06/04/plsql-try-catch-finally/">PL/SQL try-catch-finally</a>
+    </h1>
+  
+
+        <div class="article-meta">
+          <div class="article-date">
+  <i class="fa fa-calendar"></i>
+  <a href="/2015/06/04/plsql-try-catch-finally/">
+    <time datetime="2015-06-03T22:00:00.000Z" itemprop="datePublished">2015-06-04</time>
+  </a>
+</div>
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>The best example to follow would be Java implementation of <code>try-catch-finally</code>. However in PL/SQL it would get messy and the code would remind good ol’ spaghetti western with epic theme - The Good, The Bad and The Ugly.</p>
+<p><a href="https://www.youtube.com/watch?v=pLgJ7pk0X-s" target="_blank" rel="noopener">https://www.youtube.com/watch?v=pLgJ7pk0X-s</a></p>
+<ul>
+<li><strong>The Good</strong> - catch an exception using <code>try-catch</code> block</li>
+<li><strong>The Bad</strong> - code in <code>finally</code> block is executed even an exception is thrown</li>
+<li><strong>The Ugly</strong> - if code has a <code>return</code> statement inside the <code>try</code> or <code>catch</code> block, the code inside the <code>finally</code> block will get executed before returning from the method</li>
+</ul>
+<h2 id="The-Good"><a href="#The-Good" class="headerlink" title="The Good"></a>The Good</h2><p>Exception handler in PL/SQL is quite simple</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">DECLARE</span><br><span class="line">    e EXCEPTION;</span><br><span class="line">BEGIN</span><br><span class="line">    dbms_output.put_line(&apos;in try block&apos;);</span><br><span class="line">    RAISE e;</span><br><span class="line">EXCEPTION</span><br><span class="line">    WHEN e THEN</span><br><span class="line">        dbms_output.put_line(&apos;in catch block&apos;);</span><br><span class="line">        dbms_output.put_line(SQLERRM);</span><br><span class="line">END;</span><br></pre></td></tr></table></figure>
+<h2 id="The-Bad"><a href="#The-Bad" class="headerlink" title="The Bad"></a>The Bad</h2><p>To implement finally, we need a little workaround - define <code>finally</code> block as “inline” stored procedure.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">DECLARE</span><br><span class="line">    e EXCEPTION;</span><br><span class="line"></span><br><span class="line">    PROCEDURE finally IS</span><br><span class="line">    BEGIN</span><br><span class="line">        dbms_output.put_line(&apos;in finally block&apos;);</span><br><span class="line">    END;</span><br><span class="line"></span><br><span class="line">BEGIN</span><br><span class="line">    dbms_output.put_line(&apos;in try block&apos;);</span><br><span class="line">    RAISE e;</span><br><span class="line">    finally;</span><br><span class="line">EXCEPTION</span><br><span class="line">    WHEN e THEN</span><br><span class="line">        dbms_output.put_line(&apos;in catch block&apos;);</span><br><span class="line">        dbms_output.put_line(SQLERRM);</span><br><span class="line">        finally;</span><br><span class="line">END;</span><br></pre></td></tr></table></figure>
+<h2 id="The-Ugly"><a href="#The-Ugly" class="headerlink" title="The Ugly"></a>The Ugly</h2><p>But the implementation is not complete, until it gets the third feature. And now it gets ugly …<br>From countless implementations I’ve chosen these two</p>
+<h3 id="Implement-as-function"><a href="#Implement-as-function" class="headerlink" title="Implement as function"></a>Implement as function</h3><h4 id="Option-A"><a href="#Option-A" class="headerlink" title="Option A"></a>Option A</h4><p><strong>Pros</strong></p>
+<ul>
+<li>all “special” logic is in minimalistic subprograms<ul>
+<li>you don’t need to change <code>the_result</code> method at all</li>
+<li>cleanup code will be implemented in <code>finally</code> subprogram</li>
+</ul>
+</li>
+<li></li>
+</ul>
+<p><strong>Cons</strong></p>
+<ul>
+<li>this <code>the_result</code> method - I like the syntactic “sugar” in form of <code>RETURN the_result(value)</code>, but still its little bit weird</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">FUNCTION try_catch_finally RETURN typ_method_result IS</span><br><span class="line"></span><br><span class="line">    PROCEDURE finally IS</span><br><span class="line">    BEGIN</span><br><span class="line">        --TODO: implement finally code here</span><br><span class="line">        --TODO: do not change result here - BAD PRACTICE</span><br><span class="line">        NULL;</span><br><span class="line">    END;</span><br><span class="line"></span><br><span class="line">    --ensures that finally is called before returning from method</span><br><span class="line">    FUNCTION the_result(a_value_in IN typ_method_result) RETURN typ_method_result IS</span><br><span class="line">    BEGIN</span><br><span class="line">        finally;</span><br><span class="line">        RETURN a_value_in;</span><br><span class="line">    END;</span><br><span class="line">    </span><br><span class="line">BEGIN</span><br><span class="line">    --TODO: implement try block code here</span><br><span class="line">    </span><br><span class="line">    RETURN the_result(&lt;result_normal&gt;);</span><br><span class="line">EXCEPTION</span><br><span class="line">    WHEN e_expected_exception_return THEN</span><br><span class="line">        --TODO: handle caught exception</span><br><span class="line">        RETURN the_result(&lt;result_catch&gt;);</span><br><span class="line">        </span><br><span class="line">    WHEN OTHERS THEN</span><br><span class="line">        finally;</span><br><span class="line">        RAISE;</span><br><span class="line">        </span><br><span class="line">END;</span><br></pre></td></tr></table></figure>
+<h4 id="Option-B"><a href="#Option-B" class="headerlink" title="Option B"></a>Option B</h4><p><strong>Pros</strong></p>
+<ul>
+<li>single point of return - I consider it Best Practice to have only one</li>
+</ul>
+<p><strong>Cons</strong></p>
+<ul>
+<li>implementation of <code>try</code> block in subprograms - I just don’t like subprograms</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">FUNCTION fb_try_catch_finally RETURN typ_method_result IS</span><br><span class="line"></span><br><span class="line">    l_result typ_method_result;</span><br><span class="line"></span><br><span class="line">    PROCEDURE finally IS</span><br><span class="line">    BEGIN</span><br><span class="line">        --TODO: implement finally code here</span><br><span class="line">        --TODO: do not change result here - BAD PRACTICE</span><br><span class="line">        NULL;</span><br><span class="line">    END;</span><br><span class="line"></span><br><span class="line">    PROCEDURE try_catch IS</span><br><span class="line">    BEGIN</span><br><span class="line">        --TODO: implement try block code here</span><br><span class="line">        l_result := &lt;result_normal&gt;;</span><br><span class="line">    EXCEPTION</span><br><span class="line">        WHEN e_expected_exception_return THEN</span><br><span class="line">            --TODO: handle caught exception</span><br><span class="line">            l_result := &lt;result_catch&gt;;</span><br><span class="line">    END;</span><br><span class="line"></span><br><span class="line">BEGIN</span><br><span class="line">    BEGIN</span><br><span class="line">        try_catch;</span><br><span class="line">    EXCEPTION</span><br><span class="line">        WHEN OTHERS THEN</span><br><span class="line">            finally;</span><br><span class="line">            RAISE;</span><br><span class="line">    END;</span><br><span class="line">    finally;</span><br><span class="line">    RETURN l_result;</span><br><span class="line">END;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://http://s-oravec.github.io/2015/06/04/plsql-try-catch-finally/" data-id="cjq82oshb0006wv5u07wphvjv" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Oracle/">Oracle</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PL-SQL/">PL/SQL</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    
+    
+    <article id="post-note-001-to-future-me" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/06/04/note-001-to-future-me/">SQL*Plus set substitution variable from select</a>
+    </h1>
+  
+
+        <div class="article-meta">
+          <div class="article-date">
+  <i class="fa fa-calendar"></i>
+  <a href="/2015/06/04/note-001-to-future-me/">
+    <time datetime="2015-06-03T22:00:00.000Z" itemprop="datePublished">2015-06-04</time>
+  </a>
+</div>
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Don’t waste time googling “sqlplus set substitution variable from select”. It’s </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">COLUMN USER NEW_VALUE g_schema</span><br><span class="line">SELECT USER FROM dual;</span><br><span class="line">prompt &amp;&amp;g_schema</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://http://s-oravec.github.io/2015/06/04/note-001-to-future-me/" data-id="cjq82oshc0008wv5u1couqjmx" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Oracle/">Oracle</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SQL-Plus/">SQL*Plus</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    
+    
+    <article id="post-oracle-open-source-pains-01" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/05/14/oracle-open-source-pains-01/">Oracle OpenSource pains</a>
+    </h1>
+  
+
+        <div class="article-meta">
+          <div class="article-date">
+  <i class="fa fa-calendar"></i>
+  <a href="/2015/05/14/oracle-open-source-pains-01/">
+    <time datetime="2015-05-13T22:00:00.000Z" itemprop="datePublished">2015-05-14</time>
+  </a>
+</div>
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Last couple months spent developing JavaScript applications made me think about tools/applications that I would need for same comfort of development in PL/SQL. It always came down to one thing - packages = module = components.</p>
+<p>The best name would be <strong>module</strong> as package has a different meaning in Oracle world.</p>
+<p>By module I mean</p>
+<ul>
+<li>bundle of<ul>
+<li>stored procedures</li>
+<li>DDL &amp; DML scripts</li>
+<li>install/uninstall/upgrade SQL*Plus scripts</li>
+</ul>
+</li>
+</ul>
+<p>There is no common, industry standard how to create modules of Oracle DB code (or am I missing something?). Oracle is developing the Cart thing, which is currently exposed through Oracle SQL Developer and sadly the only way to use (in SQL Developer) is to deploy it to Oracle Cloud.</p>
+<p>Also what we need is definition of the way how to package, distribute, install/uninstall modules into your code base and then into Oracle Database. How to define inter-module dependencies and all that stuff that is provided by e.g. <a href="http://www.npmjs.com" target="_blank" rel="noopener">npmjs</a> - which is great source of inspiration for me.</p>
+<p>I’m working on draft for such a spec, which is based on npmjs’ definition for <code>package.json</code>. You can find it <a href="https://github.com/s-oravec/oradb_module_specification" target="_blank" rel="noopener">here</a>. Any comments/PRs are greatly welcomed.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://http://s-oravec.github.io/2015/05/14/oracle-open-source-pains-01/" data-id="cjq82oshe0009wv5ugx1540l0" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Open-Source/">Open Source</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Oracle/">Oracle</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    
+    
+    <article id="post-hello-world" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/05/11/hello-world/">Tradaa!!!</a>
+    </h1>
+  
+
+        <div class="article-meta">
+          <div class="article-date">
+  <i class="fa fa-calendar"></i>
+  <a href="/2015/05/11/hello-world/">
+    <time datetime="2015-05-10T22:00:00.000Z" itemprop="datePublished">2015-05-11</time>
+  </a>
+</div>
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>So I begin with OpenSource. 3…2…1…NOW!!! Actually I did couple months ago, but sometimes it takes a longer time to publish something, than to do it.</p>
+<p>I’ve developed a lot. I’ve deleted more code with backspace than some of my more senior colleagues have ever written.</p>
+<p>There’s only one catch. Almost all of it has been in PL/SQL or SQL*Plus. It’s ugly, but powerful. Even COBOL is more sexy than PL/SQL and programming in SQL*Plus can be even worse than <a href="http://en.wikipedia.org/wiki/Brainfuck" target="_blank" rel="noopener">this cutie</a>. But still it can be fun.</p>
+<p>There was huge reinventing of wheel on almost every project I came to. And I’ve got tired of that.</p>
+<p>I had a long pause in my PL/SQL programming quest and spent some time developing in JavaScript. And I found that hidden world of OpenSource software. And I was amazed and decided to share some of my knowledge.</p>
+<p>So here’s my contribution to my future self and to humanity - in PL/SQL and SQL*Plus.</p>
+<p>Enjoy. Comment. Fork. Post PRs. Any form of interaction is greatly welcomed.</p>
+<hr>
+<p>(most of my projects I maintain in <a href="https://github.com/principal-engineering" target="_blank" rel="noopener">Principal engineering</a> organization, company I work for)</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://http://s-oravec.github.io/2015/05/11/hello-world/" data-id="cjq82osh90005wv5u8s1bjfq3" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/General/">General</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+  
+</section>
+      
+        <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">recents</h3>
+    <div class="widget">
+      <ul id="recent-post" class="no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category"></p>
+              <p class="item-title"><a href="/2016/10/18/sqlcl-appends-junks-bytes-when-spooling/" class="title">SQLcl appends junks bytes when spooling</a></p>
+              <p class="item-date"><time datetime="2016-10-18T13:02:24.000Z" itemprop="datePublished">2016-10-18</time></p>
+            </div>
+          </li>
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category"></p>
+              <p class="item-title"><a href="/2016/10/14/scheduler-job-killed-for-unknown-reason/" class="title">Scheduler Job killed for unknown reason</a></p>
+              <p class="item-date"><time datetime="2016-10-14T08:33:56.000Z" itemprop="datePublished">2016-10-14</time></p>
+            </div>
+          </li>
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category"></p>
+              <p class="item-title"><a href="/2015/10/21/using-env-variables-in-sqlplus-and-sqlcl/" class="title">Using Environment Variables In SQL*Plus/SQLcl</a></p>
+              <p class="item-date"><time datetime="2015-10-21T20:19:41.000Z" itemprop="datePublished">2015-10-21</time></p>
+            </div>
+          </li>
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category"></p>
+              <p class="item-title"><a href="/2015/06/04/plsql-try-catch-finally/" class="title">PL/SQL try-catch-finally</a></p>
+              <p class="item-date"><time datetime="2015-06-03T22:00:00.000Z" itemprop="datePublished">2015-06-04</time></p>
+            </div>
+          </li>
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category"></p>
+              <p class="item-title"><a href="/2015/06/04/note-001-to-future-me/" class="title">SQL*Plus set substitution variable from select</a></p>
+              <p class="item-date"><time datetime="2015-06-03T22:00:00.000Z" itemprop="datePublished">2015-06-04</time></p>
+            </div>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/DBMS-SCHEDULER/">DBMS_SCHEDULER</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/General/">General</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Open-Source/">Open Source</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Oracle/">Oracle</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PGA/">PGA</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PL-SQL/">PL/SQL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL-Plus/">SQL*Plus</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQLcl/">SQLcl</a><span class="tag-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">October 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">June 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+  
+  <div id="toTop" class="fa fa-chevron-up"></div>
+</aside>
+      
+    </div>
+    <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 Štefan Oravec<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="http://github.com/ppoffice">PPOffice</a>
+    </div>
+  </div>
+</footer>
+    
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
