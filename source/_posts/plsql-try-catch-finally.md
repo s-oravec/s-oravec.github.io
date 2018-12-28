@@ -1,4 +1,4 @@
-title: SQL*Plus set substitution variable from select
+title: PL/SQL try-catch-finally
 date: 2015-06-04
 tags:
 - Oracle
