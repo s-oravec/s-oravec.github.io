@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://s-oravec.github.io/"/>
-  <updated>2018-12-28T14:22:16.278Z</updated>
+  <updated>2019-11-28T19:43:29.381Z</updated>
   <id>http://s-oravec.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Please, do not write names of the units after end</title>
+    <link href="http://s-oravec.github.io/2019/11/28/just-another-reason-this-actually-is-not-a-best-practice/"/>
+    <id>http://s-oravec.github.io/2019/11/28/just-another-reason-this-actually-is-not-a-best-practice/</id>
+    <published>2019-11-27T23:00:00.000Z</published>
+    <updated>2019-11-28T19:43:29.381Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;Oh, another post took only 11 months ;) Anyways, please just don’t do it, and here’s another good reason why.&lt;/p&gt;
+&lt;figure
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Oracle" scheme="http://s-oravec.github.io/tags/Oracle/"/>
+    
+      <category term="PL/SQL" scheme="http://s-oravec.github.io/tags/PL-SQL/"/>
+    
+  </entry>
   
   <entry>
     <title>restart</title>

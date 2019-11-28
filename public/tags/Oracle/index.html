@@ -75,7 +75,7 @@
   	</div>
     <div class="article-info profile-block">
       <div class="article-info-block">
-        8
+        9
         <span>posts</span>
       </div>
       <div class="article-info-block">
@@ -102,6 +102,59 @@
 </aside>
       <section id="main">
   
+  
+    
+    
+      
+        <div class="archive-year-wrap">
+          <i class="fa fa-calendar"></i>
+          <a href="/archives/2019" class="archive-year">2019</a>
+        </div>
+    
+    <article id="post-just-another-reason-this-actually-is-not-a-best-practice" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/28/just-another-reason-this-actually-is-not-a-best-practice/">Please, do not write names of the units after end</a>
+    </h1>
+  
+
+        <div class="article-meta">
+          <div class="article-date">
+  <i class="fa fa-calendar"></i>
+  <a href="/2019/11/28/just-another-reason-this-actually-is-not-a-best-practice/">
+    <time datetime="2019-11-27T23:00:00.000Z" itemprop="datePublished">2019-11-28</time>
+  </a>
+</div>
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Oh, another post took only 11 months ;) Anyways, please just don’t do it, and here’s another good reason why.</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">or</span> <span class="keyword">replace</span> <span class="keyword">package</span> pkg <span class="keyword">as</span></span><br><span class="line"><span class="keyword">end</span> pkg;</span><br><span class="line">/</span><br><span class="line"></span><br><span class="line"><span class="keyword">declare</span></span><br><span class="line">    l_pkg_handle           <span class="built_in">number</span>;</span><br><span class="line">    l_pkg_modify_handle    number;</span><br><span class="line">    l_pkg_transform_handle number;</span><br><span class="line">    l_ddl                  clob;</span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line">    l_pkg_handle := dbms_metadata.open(<span class="string">'PACKAGE'</span>);</span><br><span class="line">    dbms_metadata.set_filter(l_pkg_handle, 'NAME', 'PKG');</span><br><span class="line">    dbms_metadata.set_filter(l_pkg_handle, 'SCHEMA', user);</span><br><span class="line">    l_pkg_modify_handle := dbms_metadata.add_transform(l_pkg_handle, 'MODIFY');</span><br><span class="line">    dbms_metadata.set_remap_param(l_pkg_modify_handle, 'REMAP_NAME', 'PKG', 'PKG2');</span><br><span class="line">    l_pkg_transform_handle := dbms_metadata.add_transform(l_pkg_handle, 'DDL');</span><br><span class="line">    l_ddl := dbms_metadata.fetch_clob(l_pkg_handle);</span><br><span class="line">    dbms_metadata.close(l_pkg_handle);</span><br><span class="line">    DBMS_OUTPUT.put_line(l_ddl);</span><br><span class="line"><span class="keyword">end</span>;</span><br><span class="line">/</span><br></pre></td></tr></table></figure>
+<p>The name of the package after <code>end</code> does not get changed. </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">sql&gt; create or replace package pkg as</span><br><span class="line">     end pkg;</span><br><span class="line">[2019-11-28 20:43:03] completed <span class="keyword">in</span> 17 ms</span><br><span class="line">sql&gt; <span class="built_in">declare</span></span><br><span class="line">         l_pkg_handle           number;</span><br><span class="line">         l_pkg_modify_handle    number;</span><br><span class="line">         l_pkg_transform_handle number;</span><br><span class="line">         l_ddl                  clob;</span><br><span class="line">     begin</span><br><span class="line">         l_pkg_handle := dbms_metadata.open(<span class="string">'PACKAGE'</span>);</span><br><span class="line">         dbms_metadata.set_filter(l_pkg_handle, <span class="string">'NAME'</span>, <span class="string">'PKG'</span>);</span><br><span class="line">         dbms_metadata.set_filter(l_pkg_handle, <span class="string">'SCHEMA'</span>, user);</span><br><span class="line">         l_pkg_modify_handle := dbms_metadata.add_transform(l_pkg_handle, <span class="string">'MODIFY'</span>);</span><br><span class="line">         dbms_metadata.set_remap_param(l_pkg_modify_handle, <span class="string">'REMAP_NAME'</span>, <span class="string">'PKG'</span>, <span class="string">'PKG2'</span>);</span><br><span class="line">         l_pkg_transform_handle := dbms_metadata.add_transform(l_pkg_handle, <span class="string">'DDL'</span>);</span><br><span class="line">         l_ddl := dbms_metadata.fetch_clob(l_pkg_handle);</span><br><span class="line">         dbms_metadata.close(l_pkg_handle);</span><br><span class="line">         DBMS_OUTPUT.put_line(l_ddl);</span><br><span class="line">     end;</span><br><span class="line">[2019-11-28 20:43:03] completed <span class="keyword">in</span> 65 ms</span><br><span class="line">[2019-11-28 20:43:03] </span><br><span class="line">[2019-11-28 20:43:03] CREATE OR REPLACE EDITIONABLE PACKAGE <span class="string">"SCOTT"</span>.<span class="string">"PKG2"</span> as</span><br><span class="line">[2019-11-28 20:43:03] end pkg;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://s-oravec.github.io/2019/11/28/just-another-reason-this-actually-is-not-a-best-practice/" data-id="ck3j4upbx00005ivgtd3utxm7" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Oracle/">Oracle</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PL-SQL/">PL/SQL</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
   
     
     
@@ -168,7 +221,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://s-oravec.github.io/2015/10/21/using-env-variables-in-sqlplus-and-sqlcl/" data-id="cjq85gen7000cab5u34c2tpha" class="article-share-link">Share</a>
+      <a data-url="http://s-oravec.github.io/2015/10/21/using-env-variables-in-sqlplus-and-sqlcl/" data-id="ck3j4upcc000b5ivg1kfzqhl2" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Oracle/">Oracle</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SQL-Plus/">SQL*Plus</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SQLcl/">SQLcl</a></li></ul>
@@ -213,7 +266,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://s-oravec.github.io/2015/06/04/note-001-to-future-me/" data-id="cjq85gemw0001ab5usu2ur6jb" class="article-share-link">Share</a>
+      <a data-url="http://s-oravec.github.io/2015/06/04/note-001-to-future-me/" data-id="ck3j4upc200015ivgdikzcnex" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Oracle/">Oracle</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SQL-Plus/">SQL*Plus</a></li></ul>
@@ -291,7 +344,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://s-oravec.github.io/2015/06/04/plsql-try-catch-finally/" data-id="cjq85gen10005ab5uhzeenco4" class="article-share-link">Share</a>
+      <a data-url="http://s-oravec.github.io/2015/06/04/plsql-try-catch-finally/" data-id="ck3j4upc900075ivg0emaud1q" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Oracle/">Oracle</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PL-SQL/">PL/SQL</a></li></ul>
@@ -348,7 +401,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://s-oravec.github.io/2015/05/14/oracle-open-source-pains-01/" data-id="cjq85gen10004ab5unr3iopxr" class="article-share-link">Share</a>
+      <a data-url="http://s-oravec.github.io/2015/05/14/oracle-open-source-pains-01/" data-id="ck3j4upc500035ivg6ks54o7e" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Open-Source/">Open Source</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Oracle/">Oracle</a></li></ul>
@@ -370,6 +423,15 @@
     <h3 class="widget-title">recents</h3>
     <div class="widget">
       <ul id="recent-post" class="no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category"></p>
+              <p class="item-title"><a href="/2019/11/28/just-another-reason-this-actually-is-not-a-best-practice/" class="title">Please, do not write names of the units after end</a></p>
+              <p class="item-date"><time datetime="2019-11-27T23:00:00.000Z" itemprop="datePublished">2019-11-28</time></p>
+            </div>
+          </li>
         
           <li>
             
@@ -407,15 +469,6 @@
             </div>
           </li>
         
-          <li>
-            
-            <div class="item-inner">
-              <p class="item-category"></p>
-              <p class="item-title"><a href="/2015/06/04/note-001-to-future-me/" class="title">SQL*Plus set substitution variable from select</a></p>
-              <p class="item-date"><time datetime="2015-06-03T22:00:00.000Z" itemprop="datePublished">2015-06-04</time></p>
-            </div>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -425,7 +478,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">tag cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/DBMS-SCHEDULER/" style="font-size: 10px;">DBMS_SCHEDULER</a> <a href="/tags/General/" style="font-size: 10px;">General</a> <a href="/tags/Open-Source/" style="font-size: 10px;">Open Source</a> <a href="/tags/Oracle/" style="font-size: 20px;">Oracle</a> <a href="/tags/PGA/" style="font-size: 10px;">PGA</a> <a href="/tags/PL-SQL/" style="font-size: 10px;">PL/SQL</a> <a href="/tags/SQL-Plus/" style="font-size: 16.67px;">SQL*Plus</a> <a href="/tags/SQLcl/" style="font-size: 13.33px;">SQLcl</a>
+      <a href="/tags/DBMS-SCHEDULER/" style="font-size: 10px;">DBMS_SCHEDULER</a> <a href="/tags/General/" style="font-size: 10px;">General</a> <a href="/tags/Open-Source/" style="font-size: 10px;">Open Source</a> <a href="/tags/Oracle/" style="font-size: 20px;">Oracle</a> <a href="/tags/PGA/" style="font-size: 10px;">PGA</a> <a href="/tags/PL-SQL/" style="font-size: 13.33px;">PL/SQL</a> <a href="/tags/SQL-Plus/" style="font-size: 16.67px;">SQL*Plus</a> <a href="/tags/SQLcl/" style="font-size: 13.33px;">SQLcl</a>
     </div>
   </div>
 
@@ -434,7 +487,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">October 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">June 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">2</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">November 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">October 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">June 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -447,7 +500,7 @@
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2018 Štefan Oravec<br>
+      &copy; 2019 Štefan Oravec<br>
       Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="http://github.com/ppoffice">PPOffice</a>
     </div>
   </div>
