@@ -3,20 +3,15 @@
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <title>Tradaa!!! | s-oravec</title>
+  <title>Archives: 2019 | s-oravec</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="So I begin with OpenSource. 3…2…1…NOW!!! Actually I did couple months ago, but sometimes it takes a longer time to publish something, than to do it. I’ve developed a lot. I’ve deleted more code with b">
-<meta name="keywords" content="General">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Tradaa!!!">
-<meta property="og:url" content="http://s-oravec.github.io/2015/05/11/hello-world/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="s-oravec">
+<meta property="og:url" content="http://s-oravec.github.io/archives/2019/index.html">
 <meta property="og:site_name" content="s-oravec">
-<meta property="og:description" content="So I begin with OpenSource. 3…2…1…NOW!!! Actually I did couple months ago, but sometimes it takes a longer time to publish something, than to do it. I’ve developed a lot. I’ve deleted more code with b">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2015-10-21T20:19:41.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Tradaa!!!">
-<meta name="twitter:description" content="So I begin with OpenSource. 3…2…1…NOW!!! Actually I did couple months ago, but sometimes it takes a longer time to publish something, than to do it. I’ve developed a lot. I’ve deleted more code with b">
+<meta name="twitter:title" content="s-oravec">
   
   
     <link rel="icon" href="/favicon.png">
@@ -67,6 +62,12 @@
     </table>
   </div>
   
+  <div id="header-sub" class="header-sub header-inner">
+    <div class="outer">
+      
+    </div>
+  </div>
+  
 </header>
     <div class="outer">
       <aside id="profile">
@@ -105,23 +106,34 @@
     
   </div>
 </aside>
-      <section id="main"><article id="post-hello-world" class="article article-type-post" itemscope="" itemprop="blogPost">
+      <section id="main">
+  
+  
+    
+    
+      
+        <div class="archive-year-wrap">
+          <i class="fa fa-calendar"></i>
+          <a href="/archives/2019" class="archive-year">2019</a>
+        </div>
+    
+    <article id="post-just-another-reason-this-actually-is-not-a-best-practice" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
     
       <header class="article-header">
         
   
-    <h1 class="article-title" itemprop="name">
-      Tradaa!!!
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/28/just-another-reason-this-actually-is-not-a-best-practice/">Please, do not write names of the units after end</a>
     </h1>
   
 
         <div class="article-meta">
           <div class="article-date">
   <i class="fa fa-calendar"></i>
-  <a href="/2015/05/11/hello-world/">
-    <time datetime="2015-05-10T22:00:00.000Z" itemprop="datePublished">2015-05-11</time>
+  <a href="/2019/11/28/just-another-reason-this-actually-is-not-a-best-practice/">
+    <time datetime="2019-11-27T23:00:00.000Z" itemprop="datePublished">2019-11-28</time>
   </a>
 </div>
           
@@ -130,45 +142,27 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>So I begin with OpenSource. 3…2…1…NOW!!! Actually I did couple months ago, but sometimes it takes a longer time to publish something, than to do it.</p>
-<p>I’ve developed a lot. I’ve deleted more code with backspace than some of my more senior colleagues have ever written.</p>
-<p>There’s only one catch. Almost all of it has been in PL/SQL or SQL*Plus. It’s ugly, but powerful. Even COBOL is more sexy than PL/SQL and programming in SQL*Plus can be even worse than <a href="http://en.wikipedia.org/wiki/Brainfuck" target="_blank" rel="noopener">this cutie</a>. But still it can be fun.</p>
-<p>There was huge reinventing of wheel on almost every project I came to. And I’ve got tired of that.</p>
-<p>I had a long pause in my PL/SQL programming quest and spent some time developing in JavaScript. And I found that hidden world of OpenSource software. And I was amazed and decided to share some of my knowledge.</p>
-<p>So here’s my contribution to my future self and to humanity - in PL/SQL and SQL*Plus.</p>
-<p>Enjoy. Comment. Fork. Post PRs. Any form of interaction is greatly welcomed.</p>
-<hr>
-<p>(most of my projects I maintain in <a href="https://github.com/principal-engineering" target="_blank" rel="noopener">Principal engineering</a> organization, company I work for)</p>
+        <p>Oh, another post took only 11 months ;) Anyways, please just don’t do it, and here’s another good reason why.</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">or</span> <span class="keyword">replace</span> <span class="keyword">package</span> pkg <span class="keyword">as</span></span><br><span class="line"><span class="keyword">end</span> pkg;</span><br><span class="line">/</span><br><span class="line"></span><br><span class="line"><span class="keyword">declare</span></span><br><span class="line">    l_pkg_handle           <span class="built_in">number</span>;</span><br><span class="line">    l_pkg_modify_handle    number;</span><br><span class="line">    l_pkg_transform_handle number;</span><br><span class="line">    l_ddl                  clob;</span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line">    l_pkg_handle := dbms_metadata.open(<span class="string">'PACKAGE'</span>);</span><br><span class="line">    dbms_metadata.set_filter(l_pkg_handle, 'NAME', 'PKG');</span><br><span class="line">    dbms_metadata.set_filter(l_pkg_handle, 'SCHEMA', user);</span><br><span class="line">    l_pkg_modify_handle := dbms_metadata.add_transform(l_pkg_handle, 'MODIFY');</span><br><span class="line">    dbms_metadata.set_remap_param(l_pkg_modify_handle, 'REMAP_NAME', 'PKG', 'PKG2');</span><br><span class="line">    l_pkg_transform_handle := dbms_metadata.add_transform(l_pkg_handle, 'DDL');</span><br><span class="line">    l_ddl := dbms_metadata.fetch_clob(l_pkg_handle);</span><br><span class="line">    dbms_metadata.close(l_pkg_handle);</span><br><span class="line">    DBMS_OUTPUT.put_line(l_ddl);</span><br><span class="line"><span class="keyword">end</span>;</span><br><span class="line">/</span><br></pre></td></tr></table></figure>
+<p>The name of the package after <code>end</code> does not get changed. </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">sql&gt; create or replace package pkg as</span><br><span class="line">     end pkg;</span><br><span class="line">[2019-11-28 20:43:03] completed <span class="keyword">in</span> 17 ms</span><br><span class="line">sql&gt; <span class="built_in">declare</span></span><br><span class="line">         l_pkg_handle           number;</span><br><span class="line">         l_pkg_modify_handle    number;</span><br><span class="line">         l_pkg_transform_handle number;</span><br><span class="line">         l_ddl                  clob;</span><br><span class="line">     begin</span><br><span class="line">         l_pkg_handle := dbms_metadata.open(<span class="string">'PACKAGE'</span>);</span><br><span class="line">         dbms_metadata.set_filter(l_pkg_handle, <span class="string">'NAME'</span>, <span class="string">'PKG'</span>);</span><br><span class="line">         dbms_metadata.set_filter(l_pkg_handle, <span class="string">'SCHEMA'</span>, user);</span><br><span class="line">         l_pkg_modify_handle := dbms_metadata.add_transform(l_pkg_handle, <span class="string">'MODIFY'</span>);</span><br><span class="line">         dbms_metadata.set_remap_param(l_pkg_modify_handle, <span class="string">'REMAP_NAME'</span>, <span class="string">'PKG'</span>, <span class="string">'PKG2'</span>);</span><br><span class="line">         l_pkg_transform_handle := dbms_metadata.add_transform(l_pkg_handle, <span class="string">'DDL'</span>);</span><br><span class="line">         l_ddl := dbms_metadata.fetch_clob(l_pkg_handle);</span><br><span class="line">         dbms_metadata.close(l_pkg_handle);</span><br><span class="line">         DBMS_OUTPUT.put_line(l_ddl);</span><br><span class="line">     end;</span><br><span class="line">[2019-11-28 20:43:03] completed <span class="keyword">in</span> 65 ms</span><br><span class="line">[2019-11-28 20:43:03] </span><br><span class="line">[2019-11-28 20:43:03] CREATE OR REPLACE EDITIONABLE PACKAGE <span class="string">"SCOTT"</span>.<span class="string">"PKG2"</span> as</span><br><span class="line">[2019-11-28 20:43:03] end pkg;</span><br></pre></td></tr></table></figure>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://s-oravec.github.io/2015/05/11/hello-world/" data-id="ck3j4prgc000144vg3meelc8f" class="article-share-link">Share</a>
+      <a data-url="http://s-oravec.github.io/2019/11/28/just-another-reason-this-actually-is-not-a-best-practice/" data-id="ck3j4prgf000344vg4gurlvya" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/General/">General</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Oracle/">Oracle</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PL-SQL/">PL/SQL</a></li></ul>
 
     </footer>
   </div>
   
-    
-<nav id="article-nav">
-  
-    <a href="/2015/05/14/oracle-open-source-pains-01/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          Oracle OpenSource pains
-        
-      </div>
-    </a>
-  
-  
-</nav>
-
-  
 </article>
 
+
+  
+  
 </section>
       
         <aside id="sidebar">
